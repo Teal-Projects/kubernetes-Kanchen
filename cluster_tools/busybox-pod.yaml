@@ -1,0 +1,16 @@
+# Pod for testing other pods
+ 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+spec:
+  containers:
+  - name: busybox
+    image: radial/busyboxplus:curl
+    args:
+    - sleep
+    - "1000"
+ 
+# Testing web page 
+#kubectl exec busybox -- curl -s <<name of the web server pods or load balancer>>
